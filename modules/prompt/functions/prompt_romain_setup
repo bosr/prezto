@@ -33,6 +33,12 @@ function prompt_romain_precmd {
   if (( $+functions[git-info] )); then
     git-info
   fi
+  # if (( $+functions[ruby-info] )); then
+  #   ruby-info
+  # fi
+  # if (( $+functions[python-info] )); then
+  #   python-info
+  # fi
 }
 
 function prompt_romain_setup {
@@ -51,6 +57,10 @@ function prompt_romain_setup {
   zstyle ':prezto:module:editor:info:keymap:primary' format ' %B%F{red}❯%F{yellow}❯%F{green}❯%f%b'
   zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format ' %F{red}♺%f'
   zstyle ':prezto:module:editor:info:keymap:alternate' format ' %B%F{green}❮%F{yellow}❮%F{red}❮%f%b'
+
+  # Set rbenv parameters
+  zstyle ':prezto:module:ruby:info:version' format 'rb:%v'
+  zstyle ':prezto:module:python:info:virtualenv' format 'virtualenv:%v'
 
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
@@ -74,6 +84,7 @@ function prompt_romain_setup {
   # Define prompts.
   PROMPT='%F{magenta}${_prompt_romain_pwd}%f${git_info:+${(e)git_info[prompt]}}%(!. %B%F{red}#%f%b.)${editor_info[keymap]} '
   RPROMPT='${editor_info[overwrite]}%(?:: %F{red}⏎%f)${VIM:+" %B%F{green}V%f%b"}${git_info[rprompt]}'
+  # RPROMPT='${editor_info[overwrite]}%(?:: %F{red}⏎%f)${VIM:+" %B%F{green}V%f%b"}${python_info[virtualenv]}${ruby_info[version]}${git_info[rprompt]}'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
 
