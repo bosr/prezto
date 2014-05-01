@@ -78,7 +78,7 @@ function prompt_romain_setup {
   zstyle ':prezto:module:git:info:unmerged' format ' %%B%F{yellow}═%f%%b'
   zstyle ':prezto:module:git:info:untracked' format ' %%B%F{magenta}◼%f%%b'
   zstyle ':prezto:module:git:info:keys' format \
-    'prompt' ' %F{blue}git%f$(coalesce "%b" "%p" "%c")%s' \
+    'prompt' ' %F{brightyellow}git%f$(coalesce "%b" "%p" "%c")%s' \
     'rprompt' '%A%B%S%a%d%m%r%U%u'
 
   # Define prompts.
